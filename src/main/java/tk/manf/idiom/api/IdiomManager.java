@@ -44,12 +44,13 @@ public interface IdiomManager {
     /**
      * Sends Message to a Messageable
      * instead of using the following:
-     * Messageable.sendMessage(Messageable.getLocalisable(IdiomManager.getLocaleOf(Messageable), id));
+     * Messageable.sendMessage(IdiomManager.getLocalisable(IdiomManager.getLocaleOf(player), id).translate(args));
      * <p/>
      * @param player Messageable which should recieve the Message
      * @param id     ID of Message
+     * @param args   Arguments
      */
-    public void sendMessage(Messageable player, String id);
+    public void sendMessage(Messageable player, String id, Object... args);
 
     /**
      * Returns the current locale of the given Messageable
